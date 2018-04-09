@@ -8,18 +8,29 @@
 
   };
 
-  var inputName = $('#inputName');
-  var inputParagraph = $('#inputParagraph');
+  $('#addDogBtn').on('click', function(e){
+    e.preventDefault();
 
-  $('#addDogBtn').on('click', function(){
-    var inputNameVal = inputName.val();
-    var inputParagraphVal = inputParagraph.val();
+    var input = {};
 
-    $('#handleAppend').append('<div class="paragraph">' + '<h1>' + inputNameVal + '</h1>' + '<p>' + inputParagraphVal + '</p></div>');
+    var inputName = $('#inputName');
+    var inputParagraph = $('#inputParagraph');
+    input.name = inputName.val();
+    input.paragraph = inputParagraph.val();
 
-    inputName.val('');
-    inputParagraph.val('');
+    var desc = new Description(input);
 
+    if (input.name != '' && input.paragraph != ''){
+      $('#handleAppend').append(desc.toHtml());
+      inputName.val('');
+      inputParagraph.val('');
+      Description.all.push(input);
+
+      localStorage.dogData = JSON.stringify(Description.all);
+
+    } else{
+      alert('Error: please enter in both name and paragraph fields');
+    }
   });
 
   module.homeController = homeController;

@@ -16,9 +16,16 @@
   </head>
   <body>
     <header>
-      <h1>Doze Dogs</h1>
-      <h2>Homes for pets</h2>
+      <h1 id="headerText">Dan's Dog Home</h1>
     </header>
+
+    <div class="video">
+      <video autoplay loop poster="img/puppies_running.png" class="video" muted="true">
+        <source src="vid/Puppies_Running.mp4" type="video/mp4">
+        <!-- <source src="vid/clouds.ogv" type="video/ogg"> -->
+      </video>
+    </div>
+
     <nav>
 
       <ul>
@@ -27,26 +34,22 @@
         <li><a href="contact">Contact</a></li>
       </ul>
 
-
-      <!-- nav before page.js integration -->
-      <!-- <ul>
-        <li class="selected">Home</li>
-        <li><a href="dogAbout.html">About</a></li>
-        <li><a href="dogContact.html">Contact</a></li>
-      </ul> -->
     </nav>
     <section class="tab-content" id="homeContent">
       <div id="handleAppend">
       </div>
 
-      <fieldset id="userInputDog">
-        <form>
+      <fieldset id="userInputFieldset">
+        <form id="userInputForm">
 
-        Name: <input required id='inputName' input type='text' placeholder='name'><br>Paragraph: <input required id='inputParagraph' input type='text' placeholder='description'><br>
+        <strong>Name:</strong> <input id='inputName' input type='text' placeholder='name'><br>
+
+        <strong>Paragraph:</strong> <textarea id='inputParagraph' input type='text'å placeholder='description'></textarea><br><br>
+
+        <button type='submit' id='addDogBtn' form="userInputForm">submit</button>
 
       </form>
 
-      <button type='submit' id='addDogBtn'>submit</button>
       </fieldset>
     </section>
 

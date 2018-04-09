@@ -1,3 +1,44 @@
+/*home page*/
+
+#headerText {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  margin: 0;
+  padding: 1em;
+}
+
+.video {
+  height: auto;
+  width: 100%;
+}
+
+nav {
+  background-color: #333;
+}
+
+nav ul li{
+  display: inline;
+}
+
+nav ul{
+  text-align: center;
+  padding: 1.4em;
+  margin: 0;
+}
+
+nav ul li a{
+  text-decoration: none;
+  font-size: 1.5em;
+  color: white;
+  margin: 1em;
+
+}
+
+nav ul li a:hover {
+    color: grey;
+}
+
 .paragraph {
   width: 45%;
   height: 100%;
@@ -7,13 +48,33 @@
 }
 
 footer {
+  margin: 2em 0 0 0;
   clear: both;
   text-align: center;
 }
 
+#userInputFieldset {
+  clear:both;
+}
 
+/*form for home page*/
 #userInputDog {
   clear:both;
+}
+
+#userInputForm {
+  text-align: center;
+  font:100%/1 sans-serif;*/
+  }
+
+#inputName {
+  margin: 2em 0 1em 1.5em;
+}
+
+fieldset{
+  border: 1.5px solid black;
+  width: 45%;
+  height: 100%;
 }
 
 /*contact page*/

@@ -18,6 +18,7 @@
   Description.loadAll = function(dogData){
     Description.all = dogData.map(function(ele){
       return new Description(ele);
+
     });
   };
 
