@@ -3,3 +3,7 @@
   height: 100%;
   float:left;
 }
+
+footer {
+  clear: both;
+}

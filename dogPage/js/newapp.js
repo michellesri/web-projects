@@ -11,13 +11,13 @@
   }
 
   Description.prototype.toHtml = function(){
-    var template = Handlebars.compile($('#dog-template').text());
+    var template = Handlebars.compile($('#dog-template'));
     return template(this);
   };
 
   Description.loadAll = function(dogData){
     Description.all = dogData.map(function(ele){
-      return new Description(ele);
+      return new Description;
     });
   };
 
@@ -46,8 +46,7 @@
     });
   };
 
-  Description.fetchAll();
   module.Description = Description;
   module.paragraphView = paragraphView;
 
-})(window);
+});
