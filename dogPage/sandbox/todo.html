@@ -24,14 +24,23 @@
       <div id="todoDiv">
         <h3 id="todoH3">TODO</h3>
         <p class="appendTo"></p>
-        <input type="checkbox"> <span class="todoItem">Application Forms</span><br>
-        <input type="checkbox"><span class="todoItem">Insurance</span><br>
-        <input type="checkbox"><span class="todoItem">Vaccines / Shots </span><br>
+        <div class="todoItem">
+          <input type="checkbox">Application Forms<br>
+        </div>
+        <div class="todoItem">
+          <input type="checkbox">Insurance<br>
+        </div>
+        <div class="todoItem">
+          <input type="checkbox">Vaccines / Shots<br>
+        </div>
       </div>
+
       <div id="completedDiv">
         <h3>Completed</h3>
         <p id="appendToCompleted"></p>
-        <input type="checkbox" checked><strike>Completed Item</strike>
+        <div class="todoItem">
+          <input type="checkbox" checked><strike>Completed Item</strike>
+        </div>
       </div>
     </fieldset>
 

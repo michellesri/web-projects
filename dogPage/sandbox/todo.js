@@ -73,14 +73,18 @@
   $('#addItemBtn').on('click', function(){
     var itemInput = $('#addItemInput').val();
 
-    $('.appendTo').append('<input class="todoItem" type=\'checkbox\'> ' + itemInput);
+    $('.appendTo').append('<div class="todoItem"><input type=\'checkbox\'>' + itemInput + '</div>');
   });
 
-  $('input:checkbox').change(
+  $('#formWrapper').on('change', 'input:checkbox',
     function(){
       if ($(this).is(':checked')) {
-        $('#appendToCompleted').append('<input type=\'checkbox\' checked>' + '<strike>' + this.text + '</strike>' + '<br>');
-        this.remove();
+        $('#appendToCompleted').append('<div style="text-decoration:line-through" class="todoItem"><input type=\'checkbox\' checked>' + $(this).parent().text().trim() + '</div>' + '<br>');
+        $(this).parent().remove();
+      } else {
+        var todoDiv = $(this).parent();
+        todoDiv.css('text-decoration','none');
+        $('.appendTo').append(todoDiv);
 
       }
     });
