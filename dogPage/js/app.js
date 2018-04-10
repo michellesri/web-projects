@@ -10,14 +10,15 @@
 
   }
 
+  var handleTemplate = Handlebars.compile($('#dog-template').text());
   Description.prototype.toHtml = function(){
-    var template = Handlebars.compile($('#dog-template').text());
-    return template(this);
+    return handleTemplate(this);
   };
 
   Description.loadAll = function(dogData){
     Description.all = dogData.map(function(ele){
       return new Description(ele);
+
     });
   };
 
