@@ -22,7 +22,6 @@
     <div class="video">
       <video autoplay loop poster="img/puppies_running.png" class="video" muted="true">
         <source src="vid/Puppies_Running.mp4" type="video/mp4">
-        <!-- <source src="vid/clouds.ogv" type="video/ogg"> -->
       </video>
     </div>
 
@@ -54,8 +53,43 @@
     </section>
 
     <section class="tab-content" id="aboutContent">
-      <p>about page info</p>
-    </section>
+        <div id="instructionsDiv">
+          <h2>Instructions:</h2>
+          <p>Use the map to search for shelters near you. An example of a sucessful query is as follows-- "dog shelters near Portland, OR" will plot points on the map that locate these shelters for you.</p>
+        </div>
+
+        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+        <div id="map"></div>
+
+        <fieldset id="formWrapper">
+          <div id="addItemDiv">
+            <h3>Add Item</h3>
+            <input id='addItemInput' type="text" placeholder="new item">
+            <button id="addItemBtn">Add</button>
+          </div>
+          <div id="todoDiv">
+            <h3 id="todoH3">TODO</h3>
+            <p class="appendTo"></p>
+            <div class="todoItem">
+              <input type="checkbox">Application Forms<br>
+            </div>
+            <div class="todoItem">
+              <input type="checkbox">Insurance<br>
+            </div>
+            <div class="todoItem">
+              <input type="checkbox">Vaccines / Shots<br>
+            </div>
+          </div>
+
+          <div id="completedDiv">
+            <h3>Completed</h3>
+            <p id="appendToCompleted"></p>
+            <div class="todoItem">
+              <input type="checkbox" checked><strike>Completed Item</strike>
+            </div>
+          </div>
+        </fieldset>
+      </section>
 
 
     <section class="tab-content" id="contactContent">
@@ -73,10 +107,18 @@
     </section>
     <footer>&copy; Dan's Dog Home</footer>
 
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFwel1uMcw0kxsDjdL1iPaAJ1vPGNLopw&libraries=places&callback=initAutocomplete" async defer></script>
+
+
+    <script src="js/aboutView.js"></script>
+
     <script src="js/homeController.js"></script>
+
     <script src="js/aboutController.js"></script>
 
     <script src="js/contactController.js"></script>
