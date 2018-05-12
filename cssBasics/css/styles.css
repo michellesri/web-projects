@@ -1,0 +1,43 @@
+@import 'import-styles.css';
+
+
+p {
+  font-size: 18px;
+  font-weight: bold;
+  background-color: lightgrey;
+}
+
+h1{
+  font-size: 65px;
+  color: white;
+}
+
+h3 {
+  color: #48525c;
+}
+
+body{
+  background-color: grey;
+  text-align: center;
+}
+
+header{
+  background-color: black;
+}
+
+.mainContent {
+  border: 3px solid white;
+  text-align: center;
+}
+
+#mainFooter {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  border-bottom: solid 10px white;
+}
+
+#secondaryContent {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  border-top: 2px solid lightgrey;
+}
