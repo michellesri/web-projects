@@ -8,6 +8,10 @@
   padding: 1em;
 }
 
+#map {
+  height: 35em;
+}
+
 .video {
   height: auto;
   width: 100%;

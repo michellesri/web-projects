@@ -80,7 +80,7 @@
   $('#formWrapper').on('change', 'input:checkbox',
     function(){
       if ($(this).is(':checked')) {
-        $('#appendToCompleted').append('<div style="text-decoration:line-through" class="todoItem"><input type=\'checkbox\' checked>' + $(this).parent().text().trim() + '</div>' + '<br>');
+        $('#appendToCompleted').append('<div style="text-decoration:line-through" class="todoItem"><input type=\'checkbox\' checked>' + $(this).parent().text().trim() + '</div>');
         $(this).parent().remove();
       } else {
         var todoDiv = $(this).parent();
