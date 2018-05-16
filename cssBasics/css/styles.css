@@ -3,8 +3,8 @@
 
 p {
   font-size: 18px;
-  font-weight: bold;
-  background-color: lightgrey;
+  /*font-weight: bold;*/
+  /*background-color: lightgrey;*/
 }
 
 h1{
@@ -19,6 +19,9 @@ h3 {
 body{
   background-color: grey;
   text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1em;
+
 }
 
 header{
@@ -40,4 +43,35 @@ header{
   padding-top: 60px;
   padding-bottom: 60px;
   border-top: 2px solid lightgrey;
+}
+
+.mainContent,
+#secondaryContent {
+  width: 60%;
+}
+
+#pigLife {
+  color: white;
+  background-color: #434a52;
+  padding: 18% 24%;
+
+  border-top: 10px solid #ffa949;
+}
+
+
+a:link {
+  color: red;
+}
+
+a:visited {
+  color: green;
+}
+
+
+:link:hover {
+  background-color: black;
+}
+
+p:active {
+  color: white;
 }
