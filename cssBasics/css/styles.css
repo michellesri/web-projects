@@ -14,6 +14,7 @@ h1{
 
 h3 {
   color: #48525c;
+  margin-bottom: .5em;
 }
 
 body{
@@ -21,6 +22,7 @@ body{
   text-align: center;
   font-family: Helvetica, Arial, sans-serif;
   line-height: 1em;
+  margin-bottom: .2em;
 
 }
 
@@ -48,6 +50,7 @@ header{
 .mainContent,
 #secondaryContent {
   width: 60%;
+  margin: auto;
 }
 
 #pigLife {
@@ -56,6 +59,8 @@ header{
   padding: 18% 24%;
 
   border-top: 10px solid #ffa949;
+
+  margin: 105px 0 50px;
 }
 
 
