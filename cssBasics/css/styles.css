@@ -1,0 +1,82 @@
+@import 'import-styles.css';
+
+
+p {
+  font-size: 18px;
+  /*font-weight: bold;*/
+  /*background-color: lightgrey;*/
+}
+
+h1{
+  font-size: 65px;
+  color: white;
+}
+
+h3 {
+  color: #48525c;
+  margin-bottom: .5em;
+}
+
+body{
+  background-color: grey;
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1em;
+  margin-bottom: .2em;
+
+}
+
+header{
+  background-color: black;
+}
+
+.mainContent {
+  border: 3px solid white;
+  text-align: center;
+}
+
+#mainFooter {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  border-bottom: solid 10px white;
+}
+
+#secondaryContent {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  border-top: 2px solid lightgrey;
+}
+
+.mainContent,
+#secondaryContent {
+  width: 60%;
+  margin: auto;
+}
+
+#pigLife {
+  color: white;
+  background-color: #434a52;
+  padding: 18% 24%;
+
+  border-top: 10px solid #ffa949;
+
+  margin: 105px 0 50px;
+}
+
+
+a:link {
+  color: red;
+}
+
+a:visited {
+  color: green;
+}
+
+
+:link:hover {
+  background-color: black;
+}
+
+p:active {
+  color: white;
+}

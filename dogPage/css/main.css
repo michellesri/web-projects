@@ -1,0 +1,115 @@
+/*home page*/
+
+#headerText {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  margin: 0;
+  padding: 1em;
+}
+
+#map {
+  height: 35em;
+}
+
+.video {
+  height: auto;
+  width: 100%;
+}
+
+nav {
+  background-color: #333;
+}
+
+nav ul li{
+  display: inline;
+}
+
+nav ul{
+  text-align: center;
+  padding: 1.4em;
+  margin: 0;
+}
+
+nav ul li a{
+  text-decoration: none;
+  font-size: 1.5em;
+  color: white;
+  margin: 1em;
+
+}
+
+nav ul li a:hover {
+    color: grey;
+}
+
+.paragraph {
+  width: 45%;
+  height: 100%;
+  float:left;
+  text-align: center;
+  margin: 10px 2.5%;
+}
+
+footer {
+  margin: 2em 0 0 0;
+  clear: both;
+  text-align: center;
+}
+
+#userInputFieldset {
+  clear:both;
+}
+
+/*form for home page*/
+#userInputDog {
+  clear:both;
+}
+
+#userInputForm {
+  text-align: center;
+  font:100%/1 sans-serif;*/
+  }
+
+#inputName {
+  margin: 2em 0 1em 1.5em;
+}
+
+fieldset{
+  border: 1.5px solid black;
+  width: 45%;
+  height: 100%;
+}
+
+/*contact page*/
+
+.contact-info {
+  list-style:none;
+  padding: 0;
+  margin: 0;
+  font-family: arial;
+  font-size: .9em;
+}
+
+.contact-info a{
+  display: block;
+  min-height: 20px;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  padding: 0 0 0 30px;
+  margin: 0 0 10px;
+}
+
+.contact-info li.phone a{
+  background-image: url('../img/phone.png')
+
+}
+
+.contact-info li.mail a{
+  background-image: url('../img/mail.png')
+
+}
+.contact-info li.twitter a{
+  background-image: url('../img/twitter.png')
+
+}

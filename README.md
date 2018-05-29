@@ -18,7 +18,7 @@ git checkout master
 # from this repo
 git checkout S2V2
 ```
-These instructions are outlined in individual videos. 
+These instructions are outlined in individual videos.
 
 **To view the final app:**
 ```
