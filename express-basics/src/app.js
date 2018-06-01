@@ -5,7 +5,10 @@ var express = require('express'),
 
 var app = express();
 
-debugger;
+app.use('/static', express.static(__dirname + '/public'));
+
+app.set('view engine', 'jade');
+app.set('views', __dirname + '/templates');
 
 //express is a function that returns an object. we assign it to app. it has methods. .get .post.
 
@@ -13,14 +16,20 @@ debugger;
 
 // routing is handling data requests to different endpoints. www.wahoo.com/blah <-- endpoint is /blah
 
-app.get('/', function(request, response){
-  response.send('<h1>wahooooo </h1>');
+app.get('/', function(req, res){
+  res.render('index');
 });
 
-app.get('/blog/:title', function(request, response){
-  var title = req.params.title;
-  var post = posts[title];
-  response.send(posts);
+app.get('/blog/:blah?', function(req, res){
+  var title = req.params.blah;
+  if (title === undefined){
+    res.status(503);
+    // this gives the status code of 502 which is a service unavaiable error
+    res.send('this page is under construction');
+  } else{
+    var post = posts[title] || {};
+    res.render('post', {post: post});
+  }
 });
 
 //post is used for creating data.
