@@ -21,6 +21,8 @@ app.set('views', __dirname + '/templates');
 // routing is handling data requests to different endpoints. www.wahoo.com/blah <-- endpoint is /blah
 
 app.get('/', function(req, res){
+  var path = req.path;
+  res.locals.path = path;
   res.render('index');
 });
 
