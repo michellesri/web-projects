@@ -3,6 +3,10 @@
 var express = require('express'),
   posts = require('./mock/posts.json');
 
+var postsLists = Object.keys(posts).map(function(value){
+  return posts[value];
+});
+
 var app = express();
 
 app.use('/static', express.static(__dirname + '/public'));
@@ -25,7 +29,7 @@ app.get('/blog/:blah?', function(req, res){
   if (title === undefined){
     res.status(503);
     // this gives the status code of 502 which is a service unavaiable error
-    res.send('this page is under construction');
+    res.render('blog', {posts: postsLists});
   } else{
     var post = posts[title] || {};
     res.render('post', {post: post});
