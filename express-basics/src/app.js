@@ -38,6 +38,14 @@ app.get('/blog/:blah?', function(req, res){
   }
 });
 
+app.get('/posts', function(req, res){
+  if (req.query.raw){
+    res.json(posts);
+  } else{
+    res.json(postsLists);
+  }
+  res.json(postsLists);
+});
 //post is used for creating data.
 //get is used to read data
 //put is used to update data
