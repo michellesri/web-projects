@@ -26,7 +26,7 @@ startBtn.addEventListener('click', function(){
 
 });
 
-initImages(rawData);
+getState();
 
 function Image(data){
   this.fileName = path + data;
@@ -70,8 +70,9 @@ function populateImages(){
 function wrapperListener(ev){
   if (ev.target.childElementCount === 0){
     var clickedImage = ev.target.id;
-    console.log(ev.target.id);
-    images[pageState[clickedImage]].clicks++;
+    console.log(ev.target.id); // this will show leftPic, middle, or rightPic.
+    var imageIndex = pageState[clickedImage];
+    images[imageIndex].clicks++;
     pageState.totalClicks++;
     populateImages();
     saveState();
@@ -85,17 +86,23 @@ function wrapperListener(ev){
 
 function saveState(){
   localStorage.pageState = JSON.stringify(pageState);
-  localStorage.pageState = JSON.stringify(images);
+  localStorage.images = JSON.stringify(images);
 
 }
 
 function getState(){
   if (localStorage.images){
     images = JSON.parse(localStorage.images);
+  } else {
+    initImages(rawData);
+    return;
   }
   if (localStorage.pageState){
     pageState = JSON.parse(localStorage.pageState);
     if(pageState.start){
+      leftPic.setAttribute('src', images[pageState.leftPic].fileName);
+      middlePic.setAttribute('src', images[pageState.middlePic].fileName);
+      rightPic.setAttribute('src', images[pageState.rightPic].fileName);
       imgWrapper.addEventListener('click', wrapperListener);
     }
   }
