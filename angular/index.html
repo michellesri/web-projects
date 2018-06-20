@@ -12,14 +12,18 @@
 
   <h1 ng-click='helloWorld()'>TODO List</h1>
   <div ng-controller= 'mainCtrl' class='list'>
+    <div class='add'>
+      <a href='' ng-click='addTodo()'>+ Add a New Task</a>
+    </div
+    >
     <div ng-repeat='todo in todos' ng-class="{'editing-item': editing, 'edited': todo.edited}" class='item'>
       <input ng-model='todo.completed' type='checkbox'/>
       <label ng-hide='editing'>{{todo.name}}</label>
       <input ng-change='todo.edited = true' ng-blur='editing = false;' ng-show='editing' ng-model='todo.name' class='editing-label' type='text'>
       <div class='actions'>
         <a href="" ng-click=' editing = !editing'>edit</a>
-        <a href="" ng-click='helloWorld()'>save</a>
-        <a href="" class='delete'>delete</a>
+        <a href="" ng-click='saveTodo(todo)'>save</a>
+        <a href="" ng-click='deleteTodo(todo, $index)' class='delete'>delete</a>
       </div>
     </div>
     <div>
