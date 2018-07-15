@@ -42,7 +42,17 @@ function Application(props){
 }
 
 
-ReactDOM.render(<Application title="My Scoreboard"/>, document.getElementById('container'));
+//helps keep track of the prop types.
+Application.propTypes = {
+  title: React.PropTypes.string
+};
+
+Application.defaultProps = {
+  title: "Scoreboard"
+}
+
+
+ReactDOM.render(<Application />, document.getElementById('container'));
 //takes two arguments
 //1st is a virtual dom element
 //2nd is a real dom element where we want to place our virtual dom
