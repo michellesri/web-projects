@@ -11,9 +11,16 @@
   }
 
   var handleTemplate = Handlebars.compile($('#dog-template').text());
+
   Description.prototype.toHtml = function(){
-    return handleTemplate(this);
+    return handleTemplate(this); //toHtml is run as a method on the Description object 'this' is the object.
   };
+
+  // code below can be used to replace Description.prototype.toHtml
+
+  // function toHtml(object){
+  //   return handleTemplate(object);
+  // }
 
   Description.loadAll = function(dogData){
     Description.all = dogData.map(function(ele){
@@ -35,20 +42,26 @@
       $.getJSON('dogData.json').done(myFunction);
       function myFunction(data){
         Description.loadAll(data);
-        localStorage.dogData = JSON.stringify(Description.all);
         paragraphView.appendHandle();
+        localStorage.dogData = JSON.stringify(Description.all);
       }
     }
   };
 
   paragraphView.appendHandle = function(){
     Description.all.forEach(function(d){
-      $('#handleAppend').append(d.toHtml());
-    });
+      $('#handleAppend').append(d.toHtml()); // running handleTemplate on each description which gives the html for each for each object.
+    }); //d is an instantiated object of Description. which inherits prototype so that d has access to toHtml. and 'this' in handleTemplate refers to the whichever object calls toHtml.
   };
 
   Description.fetchAll();
-  module.Description = Description;
+
+  module.Description = Description; //window.description is equal to Description in the iffe scope
   module.paragraphView = paragraphView;
 
 })(window);
+
+// var x = 4 is the same as
+// window.x = 4.
+// window is the root object
+// passing window in the iffe

@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/hdngr/treehouse-express-basics#readme",
   "devDependencies": {
+    "chai": "^3.5.0",
     "gulp": "^3.9.1"
   }
 }
