@@ -16,6 +16,13 @@
     return handleTemplate(this); //toHtml is run as a method on the Description object 'this' is the object.
   };
 
+  var blah = new Description({
+    name: 'funArticle',
+    description: 'read before sleeping'
+  });
+
+  blah.toHtml();
+
   // code below can be used to replace Description.prototype.toHtml
 
   // function toHtml(object){
