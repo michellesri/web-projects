@@ -1,5 +1,6 @@
-const exec = require('child_process').exec;
-const querystring = require('querystring');
+const querystring = require('querystring'),
+    fs = require('fs')
+    formidable = require('formidable');
 
 function start(res){
     console.log('request handler "start" was called');
@@ -10,9 +11,10 @@ function start(res){
     'charset=UTF-8" />' +
     '</head>' +
     '<body>' +
-    '<form action="/upload" method="post">' +
-    '<textarea name="text" rows="20" cols="60"></textarea>' +
-    '<input type="submit" value="Submit text" />' +
+    '<form action="/upload" enctype="multipart/form-data" ' +
+    'method="post">' +
+    '<input type="file" name="upload" /> ' +
+    '<input type="submit" value="Upload file" />' +
     '</form>' +
     '</body>' +
     '</html>'; 
@@ -22,12 +24,34 @@ function start(res){
     res.end();
 }
 
-function upload(res, postData){
+function upload(res, req){
     console.log('request handler "upload" was called');
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.write('you have sent: ' + querystring.parse(postData).text);
-    res.end();
+
+    var form = new formidable.IncomingForm();
+    console.log('about to parse');
+    form.parse(req, (error, fields, files) => {
+        console.log('parsing done');
+
+        // rename function with windows fs fix. windows tried to rename already existing file.
+        fs.rename(files.upload.path, '/tmp/test.png', error => {
+            if (error){
+                fs.unlink('/tmp/test.png');
+                fs.rename(files.upload.path, '/tmp/test.png');
+            }
+        });
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.write('received img: </br>');
+        res.write('<img src="/show"/>');
+        res.end();
+    });
+}
+
+function show(res){
+    console.log('request handle "show" was called');
+    res.writeHead(200, {'Content-Type': 'image/png'});
+    fs.createReadStream('/tmp/test.png').pipe(res);
 }
 
 exports.start = start;
 exports.upload = upload;
+exports.show = show;
